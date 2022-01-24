@@ -11,20 +11,33 @@ class Gamecontroller
   end
 
   def game_start
+    # prints avaliable options for player
     @view.start_option
   end
 
   def game_options(player_option)
     case player_option
     when '1'
+      # initialize player models
       player_vs_cpu
-      @view.pick_a_hand_message
+      pick_hand
     when '2'
+      # initialize player models
       cpu_vs_cpu
+      # redirects to winning_hand method
       winning_hand(@cpu_one, @cpu_two)
     else
+      # invalid option message will print
       @view.invalid_option_message(player_option)
     end
+  end
+
+  def pick_hand
+    # Ask the player to pick between rock, paper & scissors
+    @view.pick_a_hand_message
+    print "\nPick your hand (1 - 3): "
+    player_hand = gets.chomp
+    compare_hands if valid_hand?(player_hand)
   end
 
   def valid_hand?(player_hand)
@@ -40,16 +53,11 @@ class Gamecontroller
     winning_hand(@player, @cpu_two)
   end
 
-  def play_again?(player_choice)
-    if player_choice == 'y'
-      player_choice
-    else
-      false
-    end
-  end
-
   def round_over
     @view.play_again_message
+    print "\nYour option (y/n) : "
+    player_choice = gets.chomp
+    play_again?(player_choice)
   end
 
   def end_game
@@ -123,8 +131,7 @@ class Gamecontroller
     end
   end
 
-  def reset_game
-    @player.reset_hand
-    @computer.reset_hand
+  def play_again?(player_choice)
+    return player_choice if player_choice == 'y'
   end
 end
