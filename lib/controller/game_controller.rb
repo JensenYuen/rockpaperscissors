@@ -5,7 +5,7 @@ require_relative '../model/player'
 require_relative '../view/game_view'
 
 # controller that controls the logic of the gmae
-class Gamecontroller
+class GameController
   def initialize
     @view = GameView.new
   end

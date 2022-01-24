@@ -8,7 +8,7 @@ puts 'Welcome to the Rock-Paper-Scissors game!'
 puts '========================================'
 
 running = true
-rps = Gamecontroller.new
+rps = GameController.new
 
 while running
   # Ask the player to pick from 3 options
