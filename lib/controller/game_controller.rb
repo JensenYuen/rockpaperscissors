@@ -35,8 +35,8 @@ class Gamecontroller
 
   def round_over
     @view.play_again_message
-    print "\nYour option (y/n) : "
-    player_choice = gets.chomp
+    print "\nYour option : "
+    player_choice = gets.chomp.downcase
     play_again?(player_choice)
   end
 
@@ -131,18 +131,18 @@ class Gamecontroller
   def rock_win?(right_player_hand)
     # return true if right player has scissors
     # return false if right player has paper
-    right_player_hand if right_player_hand == 'scissors'
+    right_player_hand == 'scissors'
   end
 
   def paper_win?(right_player_hand)
     # return true if right player has rock
     # return false if right player has scissors
-    right_player_hand if right_player_hand == 'rock'
+    right_player_hand == 'rock'
   end
 
   def scissors_win?(right_player_hand)
     # return true if right player has paper
     # return false if right player has rock
-    right_player_hand if right_player_hand == 'paper'
+    right_player_hand == 'paper'
   end
 end

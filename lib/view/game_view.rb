@@ -33,11 +33,7 @@ class GameView
   end
 
   def win_message(player)
-    puts "\n#{Player} win!"
-  end
-
-  def lose_message(player)
-    puts "\n#{player} won!"
+    puts "\n-----------------> #{player} won! <-----------------"
   end
 
   def tie_message
@@ -46,6 +42,7 @@ class GameView
 
   def play_again_message
     puts "\nWould you like to play again?"
+    puts "'y' to play again, enter any other key to stop playing"
   end
 
   def end_game_message
@@ -107,7 +104,7 @@ class GameView
       ---.__(___)                    (__________.---
     HEREDOC
     puts rock_lose
-    lose_message(player)
+    win_message(player)
   end
 
   def paper_lose(player)
@@ -120,7 +117,7 @@ class GameView
       ---.__________)                    (___)__.---
     HEREDOC
     puts paper_lose
-    lose_message(player)
+    win_message(player)
   end
 
   def scissors_lose(player)
@@ -133,7 +130,7 @@ class GameView
       ---.__(___)                        (___)__.---
     HEREDOC
     puts scissors_lose
-    lose_message(player)
+    win_message(player)
   end
 
   # =================== hands that resulted in a tie ===================
