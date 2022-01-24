@@ -12,7 +12,7 @@ class GameView
 
   def invalid_option_message(player_option)
     puts `clear`
-    puts "'#{player_option}' is not valid, Please enter a number between 1 - 3."
+    puts "'#{player_option}' is invalid, Please enter a number between 1 - 3."
   end
 
   def invalid_hand_message(player_hand)

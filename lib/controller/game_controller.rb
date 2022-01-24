@@ -21,12 +21,12 @@ class GameController
       # initialize player models
       player_vs_cpu
       # redirects to pick_hand method
-      pick_hand
+      # pick_hand
     when '2'
       # initialize player models
       cpu_vs_cpu
       # redirects to winning_hand method
-      compare_hands(@cpu_one, @cpu_two)
+      # compare_hands(@cpu_one, @cpu_two)
     else
       # invalid option message will print
       @view.invalid_option_message(player_option)
