@@ -26,6 +26,7 @@ while running
     rps.game_options(player_option)
     # Ask player if they would like to play again
     running = rps.round_over
+    puts `clear`
   end
 end
 # Print the end of the game message

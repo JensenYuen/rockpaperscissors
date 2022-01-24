@@ -28,23 +28,19 @@ class GameView
     puts '3. Scissors'
   end
 
-  def user_display
-    puts '===== Your hand ====='
+  def game_display(player_left, player_right)
+    puts "\n===== #{player_left}'s hand ===== ===== #{player_right}'s hand ====="
   end
 
-  def cpu_display
-    puts "===== Cpu's hand ====="
+  def win_message(player)
+    puts "\n#{Player} win!"
   end
 
-  def win_message
-    puts "\nYou win!"
+  def lose_message(player)
+    puts "\n#{player} won!"
   end
 
-  def lose_message
-    puts "\nComputer won!"
-  end
-
-  def draw_message
+  def tie_message
     puts "\nIt is a tie!"
   end
 
@@ -59,76 +55,125 @@ class GameView
   end
   # ============ End of methods for printing messages ==================
 
-  # ASCII art for Rock paper and scissors
-  def left_rock
-    left_rock = <<~HEREDOC
-          _______
-      ---'   ____)
-            (_____)
-            (_____)
-            (____)
-      ---.__(___)
+  # ========== start of ASCII art for Rock paper and scissors ==========
+  # =================== hands that result in winning ===================
+  def rock_win(player)
+    rock_win = <<~HEREDOC
+          _______                         _______
+      ---'   ____)                  _____(____   '---
+            (_____)                (_______
+            (_____)               (__________
+            (____)                      (____)
+      ---.__(___)                        (___)__.---
     HEREDOC
-    puts left_rock
+    puts rock_win
+    win_message(player)
   end
 
-  def left_paper
-    left_paper = <<~HEREDOC
-          _______
-      ---'   ____)____
-                ______)
-                _______)
-              _______)
-      ---.__________)
+  def paper_win(player)
+    paper_win = <<~HEREDOC
+          _______                        _______
+      ---'   ____)____                  (____   '---
+                ______)                (_____)
+                _______)               (_____)
+               _______)                 (____)
+      ---.__________)                    (___)__.---
     HEREDOC
-    puts left_paper
+    puts paper_win
+    win_message(player)
   end
 
-  def left_scissors
-    left_scissors = <<~HEREDOC
-          _______
-      ---'   ____)____
-                ______)
-            __________)
-            (____)
-      ---.__(___)
+  def scissors_win(player)
+    scissors_win = <<~HEREDOC
+          _______                       ________
+      ---'   ____)____             ____(____    '---
+                ______)           (______
+             __________)         (_______
+            (____)                (_______
+      ---.__(___)                    (__________.---
     HEREDOC
-    puts left_scissors
+    puts scissors_win
+    win_message(player)
   end
 
-  def right_rock
-    right_rock = <<~HEREDOC
-        _______
-       (____   '---
-      (_____)
-      (_____)
-       (____)
-        (___)__.---
+  # =================== hands that results in losing ===================
+  def rock_lose(player)
+    rock_lose = <<~HEREDOC
+          _______                       ________
+      ---'   ____)                 ____(____    '---
+            (_____)               (______
+            (_____)              (_______
+            (____)                (_______
+      ---.__(___)                    (__________.---
     HEREDOC
-    puts right_rock
+    puts rock_lose
+    lose_message(player)
   end
 
-  def right_paper
-    right_paper = <<~HEREDOC
-            ________
-       ____(____    '---
-      (______
-      (_______
-      (_______
-       (__________.---
+  def paper_lose(player)
+    paper_lose = <<~HEREDOC
+          _______                         _______
+      ---'   ____)____              _____(____   '---
+                ______)            (_______
+                _______)          (__________
+               _______)                 (____)
+      ---.__________)                    (___)__.---
     HEREDOC
-    puts right_paper
+    puts paper_lose
+    lose_message(player)
   end
 
-  def right_scissors
-    right_scissors = <<~HEREDOC
-             _______
-       _____(____   '---
-      (_______
-      (__________
-            (____)
-             (___)__.---
+  def scissors_lose(player)
+    scissors_lose = <<~HEREDOC
+          _______                        _______
+      ---'   ____)____                  (____   '---
+                ______)                (_____)
+             __________)               (_____)
+            (____)                      (____)
+      ---.__(___)                        (___)__.---
     HEREDOC
-    puts right_scissors
+    puts scissors_lose
+    lose_message(player)
   end
+
+  # =================== hands that resulted in a tie ===================
+  def rock_tie
+    rock_tie = <<~HEREDOC
+          _______                       _______
+      ---'   ____)                     (____   '---
+            (_____)                   (_____)
+            (_____)                   (_____)
+            (____)                     (____)
+      ---.__(___)                       (___)__.---
+    HEREDOC
+    puts rock_tie
+    tie_message
+  end
+
+  def paper_tie
+    paper_tie = <<~HEREDOC
+          _______                      ________
+      ---'   ____)____            ____(____    '---
+                ______)          (______
+                _______)        (_______
+               _______)          (_______
+      ---.__________)               (__________.---
+    HEREDOC
+    puts paper_tie
+    tie_message
+  end
+
+  def scissors_tie
+    scissors_tie = <<~HEREDOC
+          _______                       _______
+      ---'   ____)____            _____(____   '---
+                ______)          (_______
+             __________)        (__________
+            (____)                    (____)
+      ---.__(___)                      (___)__.---
+    HEREDOC
+    puts scissors_tie
+    tie_message
+  end
+  # =========== End of ASCII art for Rock paper and scissors ===========
 end
