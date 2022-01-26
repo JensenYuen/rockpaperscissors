@@ -15,7 +15,10 @@ while running
   # 1. play against CPU
   # 2. watch CPU vs CPU
   # 3. Stop playing
-  rps.game_start
+  # prints avaliable options for player
+
+  rps.game_start_message
+
   print "\nYour option (1 - 3): "
   player_option = gets.chomp
   if player_option == '3'
@@ -27,13 +30,15 @@ while running
   end
   # Player picked option 1
   if player_option == '1'
+    # Ask the player to pick between rock, paper & scissors
+    rps.pick_a_hand_message
     print "\nPick your hand (1 - 3): "
     player_hand = gets.chomp
-    rps.pick_hand(player_hand)
+    rps.picked_hand(player_hand)
   end
 
   # Ask player if they would like to play again
-  rps.round_over
+  rps.round_over_message
   print "\nYour option : "
   player_choice = gets.chomp.downcase
   # returns true or false based on player choice
@@ -41,4 +46,4 @@ while running
   puts `clear`
 end
 # Print the end of the game message
-rps.end_game
+rps.end_game_message

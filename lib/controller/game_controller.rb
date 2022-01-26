@@ -10,11 +10,6 @@ class GameController
     @view = GameView.new
   end
 
-  def game_start
-    # prints avaliable options for player
-    @view.start_option
-  end
-
   def game_options(player_option)
     case player_option
     when '1'
@@ -33,9 +28,7 @@ class GameController
     end
   end
 
-  def pick_hand
-    # Ask the player to pick between rock, paper & scissors
-    @view.pick_a_hand_message
+  def picked_hand(player_hand)
     # Checks if valid hand was picked
     return unless valid_hand?(player_hand)
 
@@ -45,15 +38,23 @@ class GameController
     compare_hands(@player, @cpu)
   end
 
-  def round_over
-    @view.play_again_message
-  end
-
   def play_again?(player_choice)
     player_choice if player_choice == 'y'
   end
 
-  def end_game
+  def game_start_message
+    @view.start_option
+  end
+
+  def pick_a_hand_message
+    @view.pick_a_hand_message
+  end
+
+  def round_over_message
+    @view.play_again_message
+  end
+
+  def end_game_message
     @view.end_game_message
   end
 
@@ -98,6 +99,11 @@ class GameController
     end
   end
 
+  def tie?(left_player, right_player)
+    # returns true when both hands are the same
+    left_player.current_choice == right_player.current_choice
+  end
+
   def tie_hand(left_player, right_player)
     # displays a tie message
     @view.game_display(left_player.name, right_player.name)
@@ -112,11 +118,7 @@ class GameController
     end
   end
 
-  def tie?(left_player, right_player)
-    # returns true when both hands are the same
-    left_player.current_choice == right_player.current_choice
-  end
-
+  # =========== start of methods to test for winning hand ===========
   # win conditions for player
   # rock beats scissors
   # paper beats rock
