@@ -1,33 +1,33 @@
-<div id="top"></div>
-<!-- TABLE OF CONTENTS -->
-## Table Of Contents
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#considerations">Considerations</a></li>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-  </ol>
-</details>
+<div id="top">
 
+  <!-- TABLE OF CONTENTS -->
+  ## Table Of Contents
+  <details>
+    <summary>Table of Contents</summary>
+    <ol>
+      <li><a href="#acknowledgments">Acknowledgments</a></li>
+      <li>
+        <a href="#about-the-project">About The Project</a>
+        <ul>
+          <li><a href="#considerations">Considerations</a></li>
+          <li><a href="#built-with">Built With</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#getting-started">Getting Started</a>
+        <ul>
+          <li><a href="#installation">Installation</a></li>
+        </ul>
+      </li>
+    </ol>
+  </details>
+  
+</div>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+I would like to take the opportunity to thank the Mavericks Team for the chance to attempt this developer assignment. In addition to testing my current skills, I have picked up something new along the way; Unit testing. While I used it before and seen code snipets of it before, I have never written one myself. This opportunity has allowed me to understand better why TDD is important and how it can help a developer better focus on the task.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -46,7 +46,10 @@ Technical constraints were as follows,
 
 ### Considerations
 
-content to be added here
+In ruby OOP, we used classes to define the states and behaviour of our code. 
+Additionally, to reduce clutter I adopted the [MVC](https://developer.mozilla.org/en-US/docs/Glossary/MVC) design pattern.
+This would increase the files used but would make my code cleaner as well.
+Extendability of the code was also a factor to consider, as increased complexity of the game would also affect the logics in some methods. Thus, certain methods were seperate to be independent of logic and could be easier updated if needed.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
