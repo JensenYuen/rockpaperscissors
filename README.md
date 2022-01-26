@@ -82,6 +82,9 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    ruby lib/interface.rb
    ```
-
+4. To run the test
+   ```sh
+   rspec
+   ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
