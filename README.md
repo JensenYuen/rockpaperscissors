@@ -27,7 +27,7 @@
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-I would like to take the opportunity to thank the Mavericks Team for the chance to attempt this developer assignment. In addition to testing my current skills, I have picked up something new along the way; Unit testing. While I used it before and seen code snipets of it before, I have never written one myself. This opportunity has allowed me to understand better why TDD is important and how it can help a developer better focus on the task.
+I would like to take the opportunity to thank the Mavericks Team for the chance to attempt this developer assignment. In addition to testing my current skills, I have picked up something new along the way; Unit testing. While I used it before and seen code snipets of it before, I have never written one myself. This opportunity has allowed me to understand better why TDD is adopted and how it is useful in web development.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
