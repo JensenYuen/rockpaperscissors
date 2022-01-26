@@ -26,18 +26,31 @@ class GameController
       # initialize player models
       cpu_vs_cpu
       # redirects to winning_hand method
-      # compare_hands(@cpu_one, @cpu_two)
+      compare_hands(@cpu_one, @cpu_two)
     else
       # invalid option message will print
       @view.invalid_option_message(player_option)
     end
   end
 
+  def pick_hand
+    # Ask the player to pick between rock, paper & scissors
+    @view.pick_a_hand_message
+    # Checks if valid hand was picked
+    return unless valid_hand?(player_hand)
+
+    # Checks if both hands match
+    return tie_hand(@player, @cpu) if tie?(@player, @cpu)
+
+    compare_hands(@player, @cpu)
+  end
+
   def round_over
     @view.play_again_message
-    print "\nYour option : "
-    player_choice = gets.chomp.downcase
-    play_again?(player_choice)
+  end
+
+  def play_again?(player_choice)
+    player_choice if player_choice == 'y'
   end
 
   def end_game
@@ -57,20 +70,6 @@ class GameController
     @cpu_two = Player.new('CPU 2')
     @cpu_one.cpu
     @cpu_two.cpu
-  end
-
-  def pick_hand
-    # Ask the player to pick between rock, paper & scissors
-    @view.pick_a_hand_message
-    print "\nPick your hand (1 - 3): "
-    player_hand = gets.chomp
-    # Checks if valid hand was picked
-    return unless valid_hand?(player_hand)
-
-    # Checks if both hands match
-    return tie_hand(@player, @cpu) if tie?(@player, @cpu)
-
-    compare_hands(@player, @cpu)
   end
 
   def valid_hand?(player_hand)
@@ -97,10 +96,6 @@ class GameController
     else
       scissors_win?(right_player_hand) ? @view.scissors_win(left_player.name) : @view.scissors_lose(right_player.name)
     end
-  end
-
-  def play_again?(player_choice)
-    player_choice if player_choice == 'y'
   end
 
   def tie_hand(left_player, right_player)

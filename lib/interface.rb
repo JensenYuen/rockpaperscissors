@@ -24,10 +24,21 @@ while running
   else
     # player input will be checked if valid
     rps.game_options(player_option)
-    # Ask player if they would like to play again
-    running = rps.round_over
-    puts `clear`
   end
+  # Player picked option 1
+  if player_option == '1'
+    print "\nPick your hand (1 - 3): "
+    player_hand = gets.chomp
+    rps.pick_hand(player_hand)
+  end
+
+  # Ask player if they would like to play again
+  rps.round_over
+  print "\nYour option : "
+  player_choice = gets.chomp.downcase
+  # returns true or false based on player choice
+  running = rps.play_again?(player_choice)
+  puts `clear`
 end
 # Print the end of the game message
 rps.end_game
