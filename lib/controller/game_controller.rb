@@ -15,11 +15,10 @@ class GameController
       # initialize player models
       player_vs_cpu
       # redirects to pick_hand method
-      # pick_hand
     when '2'
       # initialize player models
       cpu_vs_cpu
-      # redirects to winning_hand method
+      # checks if cpus have similar hands
       return tie_hand(@cpu_one, @cpu_two) if tie?(@cpu_one, @cpu_two)
 
       compare_hands(@cpu_one, @cpu_two)
@@ -145,7 +144,7 @@ class GameController
     # return false if right player has paper
     right_player_hand == 'scissors'
     # Extenable code
-    # condition will be re-write as %w[scissors lizard].include?(right_player_hand)
+    # conditional will be re-write as %w[scissors lizard].include?(right_player_hand)
   end
 
   def paper_win?(right_player_hand)
@@ -153,7 +152,7 @@ class GameController
     # return false if right player has scissors
     right_player_hand == 'rock'
     # Extenable code
-    # condition will be re-write as %w[rock lizard].include?(right_player_hand)
+    # conditional will be re-write as %w[rock lizard].include?(right_player_hand)
   end
 
   def scissors_win?(right_player_hand)
@@ -161,7 +160,7 @@ class GameController
     # return false if right player has rock
     right_player_hand == 'paper'
     # Extenable code
-    # condition will be re-write as %w[paper spock].include?(right_player_hand)
+    # conditional will be re-write as %w[paper spock].include?(right_player_hand)
   end
 
   # =========== start of extendable code ===========

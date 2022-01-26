@@ -103,6 +103,7 @@ RSpec.describe GameController do
       end
     end
   end
+
   describe '#paper_win?' do
     context 'Checks if the left player has won' do
       it "Should return true when right player has 'rock'" do
@@ -115,6 +116,7 @@ RSpec.describe GameController do
       end
     end
   end
+
   describe '#scissors_win?' do
     context 'Checks if the left player has won' do
       it "Should return true when right player has 'paper'" do
@@ -123,6 +125,19 @@ RSpec.describe GameController do
       end
       it "Should return false when right player has 'rock'" do
         result = rps.send(:scissors_win?, 'rock')
+        expect(result).to be_falsey
+      end
+    end
+  end
+
+  describe '#play_again?' do
+    context 'Checks if player wants to play again' do
+      it "Should return true if player enters 'y'" do
+        result = rps.play_again?('y')
+        expect(result).to be_truthy
+      end
+      it 'Should return false if player enter any other key' do
+        result = rps.play_again?('n')
         expect(result).to be_falsey
       end
     end
