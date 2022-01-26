@@ -13,9 +13,7 @@ RSpec.describe Player do
         .to be_empty
     end
     it 'Should set name of player' do
-      expect(player
-        .instance_variable_get(:@name))
-        .to be_a String
+      expect(player).to have_attributes(name: 'player')
     end
   end
   describe '#assign_hand' do
@@ -38,7 +36,7 @@ RSpec.describe Player do
   describe '#cpu' do
     it 'Should assign a random hand to the cpu' do
       player.cpu
-      expect(player.current_choice).to be_a String
+      expect(player.current_choice).to be_kind_of String
     end
   end
 end
