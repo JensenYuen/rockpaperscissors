@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require 'pry-byebug'
+# frozen_string_literal: false
 
 # Model for player
 class Player

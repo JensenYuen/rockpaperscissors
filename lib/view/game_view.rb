@@ -11,11 +11,11 @@ class GameView
   end
 
   def invalid_option_message(player_option)
-    puts "'#{player_option}' is invalid, Please enter a number between 1 - 3."
+    puts "\n'#{player_option}' is invalid, Please enter a number between 1 - 3."
   end
 
   def invalid_hand_message(player_hand)
-    puts "'#{player_hand}' is an invalid hand, the CPU has won by default"
+    puts "\n'#{player_hand}' is an invalid hand, the CPU has won by default"
   end
 
   def pick_a_hand_message
