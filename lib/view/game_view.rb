@@ -35,7 +35,7 @@ class GameView
   end
 
   def tie_message
-    puts "\n-------------------> It's a tie! <-------------------"
+    puts "\n-----------------> It's a tie! <-----------------"
   end
 
   def play_again_message
