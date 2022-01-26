@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry-byebug'
 require_relative '../model/player'
 require_relative '../view/game_view'
 
