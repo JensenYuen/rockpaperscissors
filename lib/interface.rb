@@ -27,14 +27,14 @@ while running
   else
     # player input will be checked if valid
     rps.game_options(player_option)
-  end
-  # Player picked option 1
-  if player_option == '1'
-    # Ask the player to pick between rock, paper & scissors
-    rps.pick_a_hand_message
-    print "\nPick your hand (1 - 3): "
-    player_hand = gets.chomp
-    rps.picked_hand(player_hand)
+    # Player picked option 1
+    if player_option == '1'
+      # Ask the player to pick between rock, paper & scissors
+      rps.pick_a_hand_message
+      print "\nPick your hand (1 - 3): "
+      player_hand = gets.chomp
+      rps.picked_hand(player_hand)
+    end
   end
 
   # Ask player if they would like to play again

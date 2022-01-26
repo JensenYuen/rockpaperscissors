@@ -20,6 +20,8 @@ class GameController
       # initialize player models
       cpu_vs_cpu
       # redirects to winning_hand method
+      return tie_hand(@cpu_one, @cpu_two) if tie?(@cpu_one, @cpu_two)
+
       compare_hands(@cpu_one, @cpu_two)
     else
       # invalid option message will print
