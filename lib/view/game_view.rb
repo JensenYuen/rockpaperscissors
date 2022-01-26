@@ -4,7 +4,7 @@
 class GameView
   # ============ Start of methods for printing messages ==================
   def start_option
-    puts "\nChoose an option"
+    puts "\nChoose an option to start playing"
     puts '1. Play against the computer (CPU)'
     puts '2. Watch CPU vs CPU'
     puts '3. Stop playing'
