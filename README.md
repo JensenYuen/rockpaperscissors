@@ -27,7 +27,7 @@
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-I would like to take the opportunity to thank the Mavericks Team for the chance to attempt this developer assignment. In addition to testing my current skills, I have picked up something new along the way; Unit testing. While I used it before and seen code snipets of it before, I have never written one myself. This opportunity has allowed me to understand better why TDD is adopted and how it is useful in web development.
+I would like to take the opportunity to thank the Mavericks Team for the chance to attempt this developer assignment. In addition to testing my current skills, I have picked up something new along the way; Unit testing. While I used it before and seen code snippets of it before, I have never written one myself. This opportunity has allowed me to understand better why TDD is adopted and how it is useful in web development.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -49,7 +49,7 @@ Technical constraints were as follows,
 In ruby OOP, we used classes to define the states and behaviour of our code. 
 Additionally, to reduce clutter I adopted the [MVC](https://developer.mozilla.org/en-US/docs/Glossary/MVC) design pattern.
 This would increase the files used but would make my code cleaner as well.
-Extendability of the code was also a factor to consider, as increased complexity of the game would also affect the logics in some methods. Thus, certain methods were seperate to be independent of logic and could be easier updated if needed.
+Extendability of the code was also a factor to consider, as increased complexity of the game would also affect the logics in some methods. Thus, certain methods were separate to be independent of logic and could be easier updated if needed.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
